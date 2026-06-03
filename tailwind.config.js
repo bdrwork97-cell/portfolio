@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: {
-          950: '#0a0f1e',
-          900: '#0f172a',
-          800: '#1e293b',
+        ink: {
+          950: '#0c0a09',
+          900: '#1c1917',
+          800: '#292524',
         },
-        cloud: {
-          cyan: '#22d3ee',
-          blue: '#3b82f6',
-          purple: '#8b5cf6',
+        accent: {
+          DEFAULT: '#10b981',
+          light: '#34d399',
+          dark: '#059669',
         },
       },
       fontFamily: {

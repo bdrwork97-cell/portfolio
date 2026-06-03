@@ -65,8 +65,8 @@ export default function Skills() {
                 className="glass-card-hover group p-6"
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 p-2 transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="h-5 w-5 text-cyan-400" aria-hidden="true" />
+                  <div className="rounded-lg bg-gradient-to-br from-emerald-500/20 to-teal-500/20 p-2 transition-transform duration-300 group-hover:scale-110">
+                    <Icon className="h-5 w-5 text-emerald-400" aria-hidden="true" />
                   </div>
                   <h3 className="font-semibold text-white">{category.title}</h3>
                 </div>

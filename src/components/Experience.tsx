@@ -26,7 +26,7 @@ export default function Experience() {
         <div className="relative">
           {/* Timeline line */}
           <div
-            className="absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-cyan-500/50 via-blue-500/30 to-purple-500/20 md:left-1/2 md:block md:-translate-x-px"
+            className="absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-emerald-500/50 via-teal-500/30 to-violet-500/20 md:left-1/2 md:block md:-translate-x-px"
             aria-hidden="true"
           />
 
@@ -52,8 +52,8 @@ export default function Experience() {
                       transition={{ duration: 0.4, delay: index * 0.2 + 0.3 }}
                       className="relative"
                     >
-                      <div className="h-4 w-4 rounded-full border-2 border-cyan-400 bg-navy-950" />
-                      <div className="absolute inset-0 animate-pulse-glow rounded-full bg-cyan-400/30" />
+                      <div className="h-4 w-4 rounded-full border-2 border-emerald-400 bg-ink-950" />
+                      <div className="absolute inset-0 animate-pulse-glow rounded-full bg-emerald-400/30" />
                     </motion.div>
                   </div>
 
@@ -62,12 +62,12 @@ export default function Experience() {
                       <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
                         <div>
                           <h3 className="text-lg font-bold text-white">{exp.role}</h3>
-                          <div className="mt-1 flex items-center gap-2 text-cyan-400">
+                          <div className="mt-1 flex items-center gap-2 text-emerald-400">
                             <Briefcase className="h-4 w-4" aria-hidden="true" />
                             <span className="font-medium">{exp.company}</span>
                           </div>
                         </div>
-                        <span className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
+                        <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
                           {exp.dates}
                         </span>
                       </div>
@@ -89,7 +89,7 @@ export default function Experience() {
                             className="flex items-start gap-2 text-sm text-slate-400"
                           >
                             <span
-                              className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400"
+                              className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400"
                               aria-hidden="true"
                             />
                             {bullet}

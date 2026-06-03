@@ -35,7 +35,7 @@ export default function Hero() {
         className="absolute inset-0 animate-gradient opacity-30"
         style={{
           backgroundImage:
-            'linear-gradient(135deg, rgba(34,211,238,0.1) 0%, rgba(59,130,246,0.05) 25%, rgba(139,92,246,0.1) 50%, rgba(34,211,238,0.05) 75%, rgba(59,130,246,0.1) 100%)',
+            'linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(20,184,166,0.05) 25%, rgba(139,92,246,0.1) 50%, rgba(16,185,129,0.05) 75%, rgba(20,184,166,0.1) 100%)',
         }}
         aria-hidden="true"
       />
@@ -55,7 +55,7 @@ export default function Hero() {
       {floatingIcons.map(({ Icon, x, y, delay, size }, i) => (
         <motion.div
           key={i}
-          className="absolute text-cyan-500/20"
+          className="absolute text-emerald-500/20"
           style={{ left: x, top: y }}
           animate={{ y: [0, -20, 0], rotate: [0, 5, -5, 0] }}
           transition={{ duration: 6, delay, repeat: Infinity, ease: 'easeInOut' }}
@@ -69,23 +69,10 @@ export default function Hero() {
         <div className="grid w-full items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
           {/* Text content */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-sm text-cyan-300"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400" />
-              </span>
-              Available for opportunities · {personalInfo.location}
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
             >
               {personalInfo.name.split(' ')[0]}{' '}
@@ -96,7 +83,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mb-2 text-lg font-semibold text-cyan-400 sm:text-xl"
+              className="mb-2 text-lg font-semibold text-emerald-400 sm:text-xl"
             >
               {personalInfo.title}
             </motion.p>
@@ -137,7 +124,7 @@ export default function Hero() {
               <button type="button" onClick={() => scrollTo('#projects')} className="btn-primary">
                 View Projects
               </button>
-              <a href={personalInfo.resumePath} download className="btn-secondary">
+              <a href={personalInfo.resumePath} target="_blank" rel="noopener noreferrer" className="btn-secondary">
                 <Download className="h-4 w-4" aria-hidden="true" />
                 Download Resume
               </a>
@@ -156,7 +143,7 @@ export default function Hero() {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg p-2 text-slate-400 transition-colors hover:bg-white/10 hover:text-cyan-400"
+                className="rounded-lg p-2 text-slate-400 transition-colors hover:bg-white/10 hover:text-emerald-400"
                 aria-label="GitHub profile"
               >
                 <Github className="h-5 w-5" />
@@ -165,14 +152,14 @@ export default function Hero() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg p-2 text-slate-400 transition-colors hover:bg-white/10 hover:text-cyan-400"
+                className="rounded-lg p-2 text-slate-400 transition-colors hover:bg-white/10 hover:text-emerald-400"
                 aria-label="LinkedIn profile"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="rounded-lg p-2 text-slate-400 transition-colors hover:bg-white/10 hover:text-cyan-400"
+                className="rounded-lg p-2 text-slate-400 transition-colors hover:bg-white/10 hover:text-emerald-400"
                 aria-label="Send email"
               >
                 <Mail className="h-5 w-5" />
@@ -213,10 +200,10 @@ export default function Hero() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 opacity-60 blur-sm"
+                className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-emerald-500 via-teal-500 to-violet-500 opacity-60 blur-sm"
                 aria-hidden="true"
               />
-              <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-navy-900/80 p-1.5 shadow-2xl shadow-cyan-500/10 backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-ink-900/80 p-1.5 shadow-2xl shadow-emerald-500/10 backdrop-blur-sm">
                 <img
                   src={personalInfo.photoPath}
                   alt={personalInfo.photoAlt}
@@ -230,9 +217,9 @@ export default function Hero() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1 }}
-                className="absolute -bottom-3 -right-3 rounded-xl border border-cyan-500/30 bg-navy-950/90 px-4 py-2 shadow-lg backdrop-blur-md"
+                className="absolute -bottom-3 -right-3 rounded-xl border border-emerald-500/30 bg-ink-950/90 px-4 py-2 shadow-lg backdrop-blur-md"
               >
-                <p className="text-xs font-medium text-cyan-400">{personalInfo.title}</p>
+                <p className="text-xs font-medium text-emerald-400">{personalInfo.title}</p>
                 <p className="text-[10px] text-slate-500">{personalInfo.location}</p>
               </motion.div>
             </div>
@@ -244,7 +231,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
           onClick={() => scrollTo('#about')}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 transition-colors hover:text-cyan-400"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 transition-colors hover:text-emerald-400"
           aria-label="Scroll to about section"
         >
           <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>

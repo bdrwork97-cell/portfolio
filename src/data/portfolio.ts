@@ -8,9 +8,9 @@ export const personalInfo = {
   location: 'Dallas, TX',
   email: 'Bdrwork97@gmail.com',
   phone: '945-323-4349',
-  github: 'https://github.com/your-github',
+  github: 'https://github.com/bdrwork97-cell',
   linkedin: 'https://linkedin.com/in/your-linkedin',
-  resumePath: '/Devik-Cloud-Engineer-Resume.pdf',
+  resumePath: '/Devik-Cloud-Engineer-Resume.html',
   photoPath: '/devik-headshot.png',
   photoAlt: 'Professional headshot of Bodanapalli Devik, Cloud and DevOps Engineer',
 };

@@ -10,12 +10,12 @@
   }
 
   body {
-    @apply bg-navy-950 text-slate-200 antialiased;
+    @apply bg-ink-950 text-stone-300 antialiased;
     font-family: 'Inter', system-ui, sans-serif;
   }
 
   ::selection {
-    @apply bg-cyan-500/30 text-white;
+    @apply bg-emerald-500/30 text-white;
   }
 }
 
@@ -25,19 +25,19 @@
   }
 
   .glass-card-hover {
-    @apply glass-card transition-all duration-300 hover:border-cyan-500/30 hover:bg-white/[0.07] hover:shadow-lg hover:shadow-cyan-500/10;
+    @apply glass-card transition-all duration-300 hover:border-emerald-500/30 hover:bg-white/[0.07] hover:shadow-lg hover:shadow-emerald-500/10;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-emerald-400 via-teal-400 to-violet-400 bg-clip-text text-transparent;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/40;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-emerald-500/40;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-cyan-500/50 hover:bg-white/10 hover:shadow-lg hover:shadow-cyan-500/20;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 hover:bg-white/10 hover:shadow-lg hover:shadow-emerald-500/20;
   }
 
   .section-heading {
@@ -45,18 +45,18 @@
   }
 
   .section-subheading {
-    @apply mb-12 max-w-2xl text-slate-400;
+    @apply mb-12 max-w-2xl text-stone-400;
   }
 
   .skill-badge {
-    @apply inline-flex items-center rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-300 transition-all duration-200 hover:border-cyan-500/40 hover:bg-cyan-500/10 hover:text-cyan-300;
+    @apply inline-flex items-center rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-stone-300 transition-all duration-200 hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-emerald-300;
   }
 
   .mesh-gradient {
     background:
-      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(34, 211, 238, 0.08), transparent),
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(16, 185, 129, 0.08), transparent),
       radial-gradient(ellipse 60% 40% at 80% 20%, rgba(139, 92, 246, 0.08), transparent),
-      radial-gradient(ellipse 50% 60% at 60% 80%, rgba(59, 130, 246, 0.06), transparent);
+      radial-gradient(ellipse 50% 60% at 60% 80%, rgba(20, 184, 166, 0.06), transparent);
   }
 }
 
@@ -67,20 +67,19 @@
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0f1e;
+  background: #0c0a09;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(34, 211, 238, 0.3);
+  background: rgba(16, 185, 129, 0.3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(34, 211, 238, 0.5);
+  background: rgba(16, 185, 129, 0.5);
 }
