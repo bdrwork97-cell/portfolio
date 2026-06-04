@@ -1,8 +1,18 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Cloud } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { navLinks, personalInfo } from '../data/portfolio';
 import { useScrollPosition } from '../hooks/useScroll';
+
+function AzureLogo({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 96 96" fill="currentColor" aria-hidden="true">
+      <path d="M33.34 11.07L11.04 57.48a2.34 2.34 0 001.97 3.52h35.03l-14.7-49.93z" />
+      <path d="M61.69 11.07H25.66a2.34 2.34 0 00-2.19 1.55L11.04 57.48h45.67l5.98-46.41z" opacity="0.85" />
+      <path d="M84.96 57.48L62.66 11.07l-5.98 46.41h28.28z" opacity="0.7" />
+    </svg>
+  );
+}
 
 export default function Navbar() {
   const scrollY = useScrollPosition();
@@ -10,6 +20,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
 
   const isScrolled = scrollY > 50;
+  const onHero = activeSection === 'home' && scrollY < 400;
 
   useEffect(() => {
     const sections = navLinks.map((link) => link.href.replace('#', ''));
@@ -35,38 +46,43 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const navText = onHero && !isScrolled ? 'text-white/85 hover:text-white' : 'text-ms-text-secondary hover:text-azure-600';
+  const navActive = onHero && !isScrolled ? 'text-white font-semibold' : 'text-azure-600 font-semibold';
+  const headerBg = isScrolled
+    ? 'border-b border-[#edebe9] bg-white/95 shadow-sm backdrop-blur-md'
+    : onHero
+      ? 'bg-transparent'
+      : 'bg-white/90 backdrop-blur-sm border-b border-[#edebe9]';
 
   return (
     <motion.header
-      initial={{ y: -100 }}
+      initial={{ y: -80 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'border-b border-white/10 bg-navy-950/80 backdrop-blur-xl shadow-lg shadow-black/20'
-          : 'bg-transparent'
-      }`}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
         <a
           href="#home"
           onClick={(e) => {
             e.preventDefault();
             handleNavClick('#home');
           }}
-          className="flex items-center gap-2 text-lg font-bold text-white"
+          className={`flex items-center gap-2.5 text-lg font-semibold ${onHero && !isScrolled ? 'text-white' : 'text-ms-text'}`}
         >
-          <Cloud className="h-6 w-6 text-cyan-400" aria-hidden="true" />
+          <AzureLogo className={`h-7 w-7 ${onHero && !isScrolled ? 'text-azure-300' : 'text-azure-500'}`} />
           <span>
             {personalInfo.firstName}
-            <span className="gradient-text">.{personalInfo.lastName.split(' ')[0].toLowerCase()}</span>
+            <span className={onHero && !isScrolled ? 'text-azure-200' : 'text-azure-600'}>
+              .{personalInfo.lastName.split(' ')[0].toLowerCase()}
+            </span>
           </span>
         </a>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-0.5 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -75,10 +91,8 @@ export default function Navbar() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === link.href.replace('#', '')
-                    ? 'text-cyan-400'
-                    : 'text-slate-400 hover:text-white'
+                className={`rounded-fluent px-3 py-2 text-sm font-medium transition-colors ${
+                  activeSection === link.href.replace('#', '') ? navActive : navText
                 }`}
               >
                 {link.label}
@@ -93,14 +107,18 @@ export default function Navbar() {
             e.preventDefault();
             handleNavClick('#contact');
           }}
-          className="btn-primary hidden !px-4 !py-2 text-xs md:inline-flex"
+          className={`hidden rounded-fluent px-4 py-2 text-sm font-semibold transition-colors md:inline-flex ${
+            onHero && !isScrolled
+              ? 'bg-white text-azure-600 hover:bg-azure-50'
+              : 'btn-primary !py-2'
+          }`}
         >
           Contact Me
         </a>
 
         <button
           type="button"
-          className="rounded-lg p-2 text-slate-400 hover:bg-white/10 hover:text-white md:hidden"
+          className={`rounded-fluent p-2 md:hidden ${onHero && !isScrolled ? 'text-white hover:bg-white/10' : 'text-ms-text hover:bg-ms-gray'}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
@@ -115,9 +133,9 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-t border-white/10 bg-navy-950/95 backdrop-blur-xl md:hidden"
+            className="border-t border-[#edebe9] bg-white md:hidden"
           >
-            <ul className="flex flex-col gap-1 px-4 py-4">
+            <ul className="flex flex-col gap-0.5 px-4 py-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -126,10 +144,10 @@ export default function Navbar() {
                       e.preventDefault();
                       handleNavClick(link.href);
                     }}
-                    className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
+                    className={`block rounded-fluent px-4 py-3 text-sm font-medium ${
                       activeSection === link.href.replace('#', '')
-                        ? 'bg-cyan-500/10 text-cyan-400'
-                        : 'text-slate-400 hover:bg-white/5 hover:text-white'
+                        ? 'bg-azure-50 text-azure-700'
+                        : 'text-ms-text-secondary hover:bg-ms-gray'
                     }`}
                   >
                     {link.label}
@@ -137,14 +155,7 @@ export default function Navbar() {
                 </li>
               ))}
               <li className="pt-2">
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick('#contact');
-                  }}
-                  className="btn-primary w-full text-center"
-                >
+                <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }} className="btn-primary block text-center">
                   Contact Me
                 </a>
               </li>

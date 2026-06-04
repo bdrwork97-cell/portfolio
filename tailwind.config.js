@@ -4,25 +4,36 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: {
-          950: '#0c0a09',
-          900: '#1c1917',
-          800: '#292524',
+        azure: {
+          50: '#e8f4fc',
+          100: '#cce8ff',
+          200: '#9fd4ff',
+          300: '#50e6ff',
+          400: '#3aa0f3',
+          500: '#0078d4',
+          600: '#005a9e',
+          700: '#004578',
+          800: '#003966',
+          900: '#00188f',
         },
-        accent: {
-          DEFAULT: '#10b981',
-          light: '#34d399',
-          dark: '#059669',
+        ms: {
+          gray: '#f3f2f1',
+          'gray-dark': '#edebe9',
+          text: '#323130',
+          'text-secondary': '#605e5c',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        sans: ['"Segoe UI"', '"Segoe UI Variable"', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['"Cascadia Code"', 'Consolas', 'monospace'],
+      },
+      borderRadius: {
+        fluent: '4px',
+        'fluent-lg': '8px',
       },
       animation: {
         'gradient-shift': 'gradient-shift 8s ease infinite',
         float: 'float 6s ease-in-out infinite',
-        'float-delayed': 'float 6s ease-in-out 2s infinite',
         'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
       },
       keyframes: {
@@ -32,15 +43,12 @@ export default {
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '50%': { transform: 'translateY(-16px)' },
         },
         'pulse-glow': {
-          '0%, 100%': { opacity: '0.4' },
-          '50%': { opacity: '0.8' },
+          '0%, 100%': { opacity: '0.35' },
+          '50%': { opacity: '0.7' },
         },
-      },
-      backdropBlur: {
-        xs: '2px',
       },
     },
   },

@@ -9,7 +9,7 @@ export default function Certifications() {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="certifications" className="relative py-24 sm:py-32">
+    <section id="certifications" className="section-alt relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -19,7 +19,7 @@ export default function Certifications() {
         >
           <h2 className="section-heading">
             {certifications.title.split('&')[0]}
-            <span className="gradient-text">& Learning</span>
+            <span className="gradient-text-dark">& Learning</span>
           </h2>
           <p className="section-subheading">{certifications.disclaimer}</p>
         </motion.div>
@@ -37,12 +37,12 @@ export default function Certifications() {
                 whileHover={{ scale: 1.03 }}
                 className="glass-card-hover flex items-center gap-4 p-5"
               >
-                <div className="rounded-xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 p-3">
-                  <Icon className="h-6 w-6 text-purple-400" aria-hidden="true" />
+                <div className="rounded-xl bg-gradient-to-br from-azure-500/20 to-azure-500/20 p-3">
+                  <Icon className="h-6 w-6 text-azure-400" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="text-xs text-slate-500">Continuous learning path</p>
+                  <h3 className="font-semibold text-ms-text">{item.title}</h3>
+                  <p className="text-xs text-ms-text-secondary">Continuous learning path</p>
                 </div>
               </motion.div>
             );

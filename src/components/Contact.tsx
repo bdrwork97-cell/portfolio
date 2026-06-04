@@ -7,7 +7,7 @@ export default function Contact() {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32">
+    <section id="contact" className="section-alt relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -16,7 +16,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-heading">
-            Get In <span className="gradient-text">Touch</span>
+            Get In <span className="gradient-text-dark">Touch</span>
           </h2>
           <p className="section-subheading">
             Let&apos;s build reliable cloud infrastructure.
@@ -30,44 +30,44 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="glass-card p-8"
           >
-            <p className="mb-8 leading-relaxed text-slate-400">
+            <p className="mb-8 leading-relaxed text-ms-text-secondary">
               I am open to Cloud Engineer, DevOps Engineer, AWS Engineer, Azure Engineer, and Platform Engineering opportunities.
             </p>
 
             <div className="space-y-4">
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-4 transition-all hover:border-cyan-500/30 hover:bg-white/10"
+                className="flex items-center gap-4 rounded-xl border border-[#edebe9] bg-ms-gray p-4 transition-all hover:border-azure-500/30 hover:bg-ms-gray-dark"
               >
-                <div className="rounded-lg bg-cyan-500/10 p-2">
-                  <Mail className="h-5 w-5 text-cyan-400" aria-hidden="true" />
+                <div className="rounded-lg bg-azure-50 p-2">
+                  <Mail className="h-5 w-5 text-azure-600" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs text-slate-500">Email</p>
-                  <p className="font-medium text-white">{personalInfo.email}</p>
+                  <p className="text-xs text-ms-text-secondary">Email</p>
+                  <p className="font-medium text-ms-text">{personalInfo.email}</p>
                 </div>
               </a>
 
               <a
                 href={`tel:${personalInfo.phone}`}
-                className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-4 transition-all hover:border-cyan-500/30 hover:bg-white/10"
+                className="flex items-center gap-4 rounded-xl border border-[#edebe9] bg-ms-gray p-4 transition-all hover:border-azure-500/30 hover:bg-ms-gray-dark"
               >
-                <div className="rounded-lg bg-cyan-500/10 p-2">
-                  <Phone className="h-5 w-5 text-cyan-400" aria-hidden="true" />
+                <div className="rounded-lg bg-azure-50 p-2">
+                  <Phone className="h-5 w-5 text-azure-600" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs text-slate-500">Phone</p>
-                  <p className="font-medium text-white">{personalInfo.phone}</p>
+                  <p className="text-xs text-ms-text-secondary">Phone</p>
+                  <p className="font-medium text-ms-text">{personalInfo.phone}</p>
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-4">
-                <div className="rounded-lg bg-cyan-500/10 p-2">
-                  <MapPin className="h-5 w-5 text-cyan-400" aria-hidden="true" />
+              <div className="flex items-center gap-4 rounded-xl border border-[#edebe9] bg-ms-gray p-4">
+                <div className="rounded-lg bg-azure-50 p-2">
+                  <MapPin className="h-5 w-5 text-azure-600" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs text-slate-500">Location</p>
-                  <p className="font-medium text-white">{personalInfo.location}</p>
+                  <p className="text-xs text-ms-text-secondary">Location</p>
+                  <p className="font-medium text-ms-text">{personalInfo.location}</p>
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="glass-card p-8"
           >
-            <h3 className="mb-6 text-lg font-semibold text-white">Send a Message</h3>
+            <h3 className="mb-6 text-lg font-semibold text-ms-text">Send a Message</h3>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -116,7 +116,7 @@ export default function Contact() {
               className="space-y-4"
             >
               <div>
-                <label htmlFor="name" className="mb-1.5 block text-sm text-slate-400">
+                <label htmlFor="name" className="mb-1.5 block text-sm text-ms-text-secondary">
                   Name
                 </label>
                 <input
@@ -124,24 +124,24 @@ export default function Contact() {
                   id="name"
                   name="name"
                   required
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition-colors focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30"
+                  className="w-full rounded-xl border border-[#edebe9] bg-ms-gray px-4 py-3 text-sm text-ms-text placeholder:text-ms-text-secondary/50 outline-none transition-colors focus:border-azure-500/50 focus:ring-1 focus:ring-azure-500/30"
                   placeholder="Your name"
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="mb-1.5 block text-sm text-slate-400">
+                <label htmlFor="subject" className="mb-1.5 block text-sm text-ms-text-secondary">
                   Subject
                 </label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition-colors focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30"
+                  className="w-full rounded-xl border border-[#edebe9] bg-ms-gray px-4 py-3 text-sm text-ms-text placeholder:text-ms-text-secondary/50 outline-none transition-colors focus:border-azure-500/50 focus:ring-1 focus:ring-azure-500/30"
                   placeholder="Cloud Engineer Opportunity"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="mb-1.5 block text-sm text-slate-400">
+                <label htmlFor="message" className="mb-1.5 block text-sm text-ms-text-secondary">
                   Message
                 </label>
                 <textarea
@@ -149,7 +149,7 @@ export default function Contact() {
                   name="message"
                   required
                   rows={5}
-                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition-colors focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30"
+                  className="w-full resize-none rounded-xl border border-[#edebe9] bg-ms-gray px-4 py-3 text-sm text-ms-text placeholder:text-ms-text-secondary/50 outline-none transition-colors focus:border-azure-500/50 focus:ring-1 focus:ring-azure-500/30"
                   placeholder="Tell me about the opportunity..."
                 />
               </div>

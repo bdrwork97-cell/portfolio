@@ -34,8 +34,8 @@ export default function Skills() {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="skills" className="relative py-24 sm:py-32">
-      <div className="absolute inset-0 mesh-gradient opacity-50" aria-hidden="true" />
+    <section id="skills" className="relative bg-white py-24 sm:py-32">
+      <div className="absolute inset-0 mesh-gradient opacity-30" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -45,7 +45,7 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-heading">
-            Technical <span className="gradient-text">Skills</span>
+            Technical <span className="gradient-text-dark">Skills</span>
           </h2>
           <p className="section-subheading">
             A comprehensive toolkit for building, deploying, and managing cloud infrastructure at scale.
@@ -65,10 +65,10 @@ export default function Skills() {
                 className="glass-card-hover group p-6"
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="rounded-lg bg-gradient-to-br from-emerald-500/20 to-teal-500/20 p-2 transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="h-5 w-5 text-emerald-400" aria-hidden="true" />
+                  <div className="rounded-lg bg-gradient-to-br from-azure-500/20 to-azure-500/20 p-2 transition-transform duration-300 group-hover:scale-110">
+                    <Icon className="h-5 w-5 text-azure-600" aria-hidden="true" />
                   </div>
-                  <h3 className="font-semibold text-white">{category.title}</h3>
+                  <h3 className="font-semibold text-ms-text">{category.title}</h3>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
