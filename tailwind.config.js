@@ -22,6 +22,12 @@ export default {
           text: '#323130',
           'text-secondary': '#605e5c',
         },
+        holo: {
+          bg: '#eef6fc',
+          panel: 'rgba(255,255,255,0.85)',
+          border: 'rgba(0, 120, 212, 0.18)',
+          glow: 'rgba(0, 120, 212, 0.25)',
+        },
       },
       fontFamily: {
         sans: ['"Segoe UI"', '"Segoe UI Variable"', 'system-ui', '-apple-system', 'sans-serif'],
@@ -35,6 +41,11 @@ export default {
         'gradient-shift': 'gradient-shift 8s ease infinite',
         float: 'float 6s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+        'holo-shine': 'holo-shine 4s ease-in-out infinite',
+        'border-flow': 'border-flow 3s linear infinite',
+        'hero-name-shimmer-sweep': 'hero-name-shimmer-sweep 7s ease-in-out infinite',
+        'hero-name-hud-pulse': 'hero-name-hud-pulse 4s ease-in-out infinite',
+        'hero-name-orbit-spin': 'hero-name-orbit-spin 28s linear infinite',
       },
       keyframes: {
         'gradient-shift': {
@@ -49,6 +60,30 @@ export default {
           '0%, 100%': { opacity: '0.35' },
           '50%': { opacity: '0.7' },
         },
+        'holo-shine': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        'border-flow': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '200% 50%' },
+        },
+        'hero-name-shimmer-sweep': {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
+        'hero-name-hud-pulse': {
+          '0%, 100%': { opacity: '0.45' },
+          '50%': { opacity: '0.85' },
+        },
+        'hero-name-orbit-spin': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      boxShadow: {
+        'neon-azure': '0 0 20px rgba(80, 230, 255, 0.15), 0 0 40px rgba(0, 120, 212, 0.08)',
+        'neon-azure-lg': '0 0 30px rgba(80, 230, 255, 0.2), 0 0 60px rgba(0, 120, 212, 0.12)',
       },
     },
   },

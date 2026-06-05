@@ -10,23 +10,23 @@
       font-family: 'Segoe UI', Calibri, Arial, sans-serif;
       font-size: 11pt;
       line-height: 1.45;
-      color: #1c1917;
+      color: #323130;
       max-width: 8.5in;
       margin: 0 auto;
       padding: 0.55in 0.65in;
       background: #fff;
     }
     h1 { font-size: 22pt; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; }
-    .title { font-size: 12pt; color: #059669; font-weight: 600; margin-bottom: 8px; }
-    .contact { font-size: 10pt; color: #44403c; margin-bottom: 16px; }
-    .contact a { color: #44403c; text-decoration: none; }
+    .title { font-size: 12pt; color: #0078d4; font-weight: 600; margin-bottom: 8px; }
+    .contact { font-size: 10pt; color: #605e5c; margin-bottom: 16px; }
+    .contact a { color: #605e5c; text-decoration: none; }
     h2 {
       font-size: 11pt;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: #059669;
-      border-bottom: 1.5px solid #059669;
+      color: #0078d4;
+      border-bottom: 1.5px solid #0078d4;
       padding-bottom: 3px;
       margin: 16px 0 8px;
     }
@@ -34,27 +34,33 @@
     .job { margin-bottom: 14px; }
     .job-header { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px; margin-bottom: 2px; }
     .job-title { font-weight: 700; font-size: 11pt; }
-    .job-meta { font-size: 10pt; color: #57534e; }
-    .job-company { font-weight: 600; color: #292524; }
+    .job-meta { font-size: 10pt; color: #605e5c; }
+    .job-company { font-weight: 600; color: #323130; }
     ul { margin: 4px 0 0 18px; }
     li { margin-bottom: 3px; }
     .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; font-size: 10pt; }
-    .skill-cat { font-weight: 700; color: #292524; }
-    .print-btn {
+    .skill-cat { font-weight: 700; color: #323130; }
+    .download-bar {
       position: fixed; top: 16px; right: 16px;
-      background: #059669; color: #fff; border: none;
-      padding: 10px 18px; border-radius: 8px; font-size: 13px;
-      font-weight: 600; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      display: flex; gap: 8px; z-index: 100;
     }
-    .print-btn:hover { background: #047857; }
-    @media print {
-      .print-btn { display: none; }
-      body { padding: 0.4in 0.5in; }
+    .download-bar button {
+      background: #0078d4; color: #fff; border: none;
+      padding: 10px 18px; border-radius: 4px; font-size: 13px;
+      font-weight: 600; cursor: pointer;
     }
+    .download-bar button:hover { background: #005a9e; }
+    .download-bar button.secondary { background: #fff; color: #0078d4; border: 2px solid #0078d4; }
+    @media print { .download-bar { display: none; } body { padding: 0.4in 0.5in; } }
   </style>
 </head>
 <body>
-  <button class="print-btn" onclick="window.print()">Save as PDF</button>
+  <div class="download-bar">
+    <a id="pdf-download" href="/Bodanapalli-Devik-Cloud-DevOps-Resume.pdf" download="Bodanapalli-Devik-Cloud-DevOps-Resume.pdf">
+      <button type="button">Download PDF</button>
+    </a>
+    <button type="button" class="secondary" onclick="window.print()">Print / Save as PDF</button>
+  </div>
 
   <h1>Bodanapalli Devik</h1>
   <p class="title">Cloud DevOps Engineer</p>
@@ -62,29 +68,30 @@
     Dallas, TX &nbsp;|&nbsp;
     <a href="mailto:Bdrwork97@gmail.com">Bdrwork97@gmail.com</a> &nbsp;|&nbsp;
     945-323-4349 &nbsp;|&nbsp;
-    <a href="https://github.com/bdrwork97-cell">github.com/bdrwork97-cell</a>
+    <a href="https://www.linkedin.com/in/devik-bodanapalli-1742a8367/">LinkedIn</a>
   </p>
 
   <h2>Professional Summary</h2>
   <p>
-    Cloud and DevOps Engineer with 5+ years of hands-on experience designing, automating, and managing
-    cloud infrastructure across AWS and Azure. Specializes in Terraform, Kubernetes, CI/CD pipelines,
-    monitoring, security, and cloud reliability. Proven track record supporting 200K+ users, automating
-    120+ Linux VMs, and achieving 99.99% uptime in production environments.
+    Cloud and DevOps Engineer with over 5 years of hands-on experience building and managing
+    cloud infrastructure in AWS and Azure. I specialize in automating deployments, optimizing
+    CI/CD pipelines, and improving system reliability through smart monitoring and security practices.
+    I enjoy working on scalable solutions and continuously learning new tools that help teams
+    deliver faster and more securely.
   </p>
 
   <h2>Technical Skills</h2>
   <div class="skills-grid">
-    <div><span class="skill-cat">Cloud:</span> AWS, Azure, EKS, AKS, EC2, S3, IAM, Lambda, CloudWatch, CloudFormation, Azure DevOps, Azure Monitor, Azure Key Vault</div>
+    <div><span class="skill-cat">Cloud:</span> Microsoft Azure (AKS, Azure DevOps, Azure Monitor, Azure Policy, Azure Key Vault), AWS (EKS, EC2, S3, CloudFormation, CloudWatch, IAM, Lambda, ECR)</div>
     <div><span class="skill-cat">IaC:</span> Terraform, Bicep, CloudFormation, Ansible, PowerShell, Bash</div>
-    <div><span class="skill-cat">Containers:</span> Docker, Kubernetes, Helm, AWS ECR, Azure Container Registry</div>
-    <div><span class="skill-cat">CI/CD:</span> Jenkins, Azure DevOps Pipelines, GitHub Actions, GitLab CI/CD, AWS CodePipeline</div>
-    <div><span class="skill-cat">Monitoring:</span> Prometheus, Grafana, Azure Monitor, Application Insights, CloudWatch, ELK, Datadog</div>
-    <div><span class="skill-cat">Security:</span> IAM, Azure Policy, Sentinel, STIG, HIPAA, ISO 27001, FedRAMP, WAF, NSGs</div>
-    <div><span class="skill-cat">Networking:</span> VPC, VNET, Subnets, NAT Gateway, Transit Gateway, VPN, Load Balancers, DNS</div>
+    <div><span class="skill-cat">Containers:</span> Docker, Kubernetes (AKS, EKS), Helm, Azure Container Registry, AWS ECR</div>
+    <div><span class="skill-cat">CI/CD:</span> Azure DevOps Pipelines, Jenkins, GitLab CI/CD, GitHub Actions, AWS CodePipeline</div>
+    <div><span class="skill-cat">Monitoring:</span> Azure Monitor, Application Insights, Grafana, Prometheus, ELK Stack, Datadog</div>
+    <div><span class="skill-cat">Security:</span> Azure Policy, Sentinel SIEM, AWS IAM, STIG, HIPAA, ISO 27001, FedRAMP, WAF, NSGs</div>
+    <div><span class="skill-cat">Networking:</span> VNET Peering, NSGs, Load Balancers, VPN Gateway, Transit Gateway, DNS, NAT</div>
     <div><span class="skill-cat">Scripting:</span> Python, PowerShell, Bash, Go, JavaScript, TypeScript</div>
-    <div><span class="skill-cat">OS:</span> Linux (RedHat, Ubuntu), Windows Server</div>
-    <div><span class="skill-cat">Tools:</span> Git, ArgoCD, FluxCD, Terraform Cloud, OPA, Gatekeeper</div>
+    <div><span class="skill-cat">Databases:</span> Azure Synapse Analytics, MySQL, Redis, NoSQL, Amazon RDS, Amazon S3</div>
+    <div><span class="skill-cat">Tools:</span> Git, ArgoCD, FluxCD, Terraform Cloud, OPA, Gatekeeper, Sentinel, Blue-Green/Canary Deployments</div>
   </div>
 
   <h2>Professional Experience</h2>
@@ -92,19 +99,69 @@
   <div class="job">
     <div class="job-header">
       <div>
+        <span class="job-title">Cloud Engineer</span> —
+        <span class="job-company">Duke Energy</span>
+      </div>
+      <span class="job-meta">Feb 2026 – Present | United States</span>
+    </div>
+    <ul>
+      <li>Built AWS infrastructure using Terraform and CloudFormation to set up EC2 instances, S3 buckets, and VPCs, significantly speeding up new environment setups.</li>
+      <li>Designed secure and segmented VPC architectures with public/private subnets, route tables, NAT gateways, and security groups, enhancing network security and reducing attack surface.</li>
+      <li>Managed Kubernetes clusters on EKS, including Helm deployments and node group scaling, to support large-scale applications running 24/7.</li>
+      <li>Implemented load balancing solutions with AWS Application Load Balancers and Network Load Balancers to ensure high availability and fault tolerance across services.</li>
+      <li>Developed and maintained CI/CD workflows with Jenkins and AWS CodePipeline, incorporating automated testing and security scans, decreasing deployment lead times by over 60%.</li>
+      <li>Established robust identity and access controls with fine-grained AWS IAM policies and multi-account governance, minimizing privilege-related security risks.</li>
+      <li>Integrated AWS Secrets Manager with EC2, Lambda, and ECS for secure dynamic secrets rotation.</li>
+      <li>Executed automated OS patching and compliance scans across over 100 EC2 Linux servers via AWS Systems Manager and Ansible, maintaining 100% adherence to security baselines.</li>
+      <li>Led the successful migration of legacy on-premises applications to AWS cloud, optimizing infrastructure costs by 35% while improving scalability through Auto Scaling Groups.</li>
+      <li>Configured lifecycle policies and cross-region replication for AWS S3 buckets to optimize storage expenses and strengthen disaster recovery capabilities.</li>
+      <li>Deployed Amazon RDS for PostgreSQL with Multi-AZ deployments, parameter group tuning, and performance insights integration, ensuring 99.99% availability for backend services.</li>
+      <li>Set up AWS WAF and Shield to improve web application security and reduce exposure to common threats like SQL injection and XSS.</li>
+      <li>Centralized logging and auditing by integrating AWS CloudTrail with ELK stack and Athena, streamlining forensic investigations and compliance reporting.</li>
+      <li>Automated serverless processes with AWS Lambda and Step Functions to execute event-driven workflows, boosting operational efficiency by 25%.</li>
+      <li>Provisioned and optimized MongoDB clusters on Amazon EC2 and EBS-backed storage with CloudWatch metrics, automated S3 backups, replica sets, and sharding.</li>
+      <li>Established and maintained Multi-AZ Amazon RDS instances with automated backup and failover configurations, achieving recovery point objectives under 5 minutes.</li>
+      <li>Automated serverless deployment workflows for AWS Lambda using GitHub Actions and AWS CodePipeline.</li>
+      <li>Conducted chaos engineering experiments using Gremlin in staging clusters to test autoscaling and pod failures.</li>
+      <li>Built GitOps workflow with FluxCD to manage Helm-based deployments in EKS with multi-env automation.</li>
+      <li>Created centralized compliance dashboards by integrating CloudTrail logs with Athena and custom Config Rules.</li>
+      <li>Handled incident escalations as part of the on-call team, and helped document fixes and RCAs to avoid repeat issues.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <div>
         <span class="job-title">Cloud DevOps Engineer</span> —
         <span class="job-company">DXC Technology</span>
       </div>
-      <span class="job-meta">Jan 2024 – Present | United States</span>
+      <span class="job-meta">Jan 2024 – Jan 2026 | United States</span>
     </div>
     <ul>
-      <li>Built AWS infrastructure using Terraform and CloudFormation for EC2, S3, VPC, and supporting cloud services.</li>
-      <li>Designed secure VPC architectures with public/private subnets, route tables, NAT gateways, and security groups.</li>
-      <li>Managed Kubernetes clusters on Amazon EKS, including Helm deployments, node group scaling, and workload reliability.</li>
-      <li>Implemented AWS ALBs and NLBs to improve availability and fault tolerance.</li>
-      <li>Developed CI/CD workflows using Jenkins and AWS CodePipeline with automated testing and security scans.</li>
-      <li>Reduced deployment lead time by more than 60% through automation and pipeline improvements.</li>
-      <li>Used CloudWatch and monitoring tools to improve observability and incident response.</li>
+      <li>Responsible for architecting, designing, implementing, and supporting cloud-based infrastructure and its solutions.</li>
+      <li>Managed Amazon Web Services (AWS) infrastructure with automation and orchestration tools such as Chef.</li>
+      <li>Proficient in AWS services like VPC, EC2, S3, ELB, Auto Scaling Groups (ASG), EBS, RDS, IAM, CloudFormation, Route 53, CloudWatch, CloudFront, and CloudTrail.</li>
+      <li>Created multiple VPCs and public/private subnets as per requirement and distributed them across various Availability Zones.</li>
+      <li>Created NAT gateways and instances to allow communication from private instances to the internet through bastion hosts.</li>
+      <li>Involved in writing Java API for Amazon Lambda to manage some AWS services.</li>
+      <li>Used security groups, network ACLs, internet gateways, and route tables to ensure a secure zone for the organization in AWS public cloud.</li>
+      <li>Created and configured Elastic Load Balancers and Auto Scaling Groups to distribute traffic and maintain a cost-efficient, fault-tolerant, and highly available environment.</li>
+      <li>Created S3 buckets in AWS to store files, including static content required for web applications.</li>
+      <li>Used AWS Elastic Beanstalk for deploying and scaling web applications and services developed with Java.</li>
+      <li>Configured S3 buckets with lifecycle policies to archive infrequently accessed data to different storage classes based on requirements.</li>
+      <li>Created and launched EC2 instances using Linux, Ubuntu, RHEL, and Windows AMIs, and wrote shell scripts to bootstrap instances.</li>
+      <li>Used IAM to create roles, users, and groups, and implemented MFA to provide additional security to AWS accounts and resources.</li>
+      <li>Wrote CloudFormation templates in JSON to create custom VPCs, subnets, and NAT configurations for successful deployment of web applications.</li>
+      <li>Implemented DNS using Route 53 for highly available and scalable applications.</li>
+      <li>Maintained monitoring and alerting of production and corporate servers using CloudWatch.</li>
+      <li>Created EBS volumes for storing application files and mounted them to EC2 instances.</li>
+      <li>Built snapshots to back up volumes and created AMIs to store launch configurations of EC2 instances.</li>
+      <li>Wrote AWS Infrastructure as Code templates using Terraform to build staging and production environments.</li>
+      <li>Installed Workstation, Bootstrap Nodes, wrote Recipes and Cookbooks, uploaded them to Chef Server, and managed AWS for EC2, S3, and ELB using Chef Cookbooks.</li>
+      <li>Wrote Chef Cookbooks for installing Tomcat, JBoss, Nginx, WebLogic, and WebSphere, and for configuring load balancers and failover.</li>
+      <li>Responsible for Continuous Integration and Continuous Delivery process implementation using Jenkins along with Python and shell scripts to automate routine jobs.</li>
+      <li>Implemented Continuous Integration using Jenkins and Git from scratch.</li>
+      <li>Responsible for tasks like branching, tagging, and release activities using version control tools like SVN and Git.</li>
     </ul>
   </div>
 
@@ -117,15 +174,20 @@
       <span class="job-meta">May 2020 – Aug 2022 | India</span>
     </div>
     <ul>
-      <li>Designed and deployed scalable Azure infrastructure using Terraform and Bicep.</li>
-      <li>Provisioned AKS clusters, VM Scale Sets, VNETs, Azure Key Vault, and supporting Azure services.</li>
-      <li>Automated CI/CD pipelines using Azure DevOps with security scanning and approval gates.</li>
-      <li>Managed AKS microservices supporting 200K+ daily users with 99.99% uptime.</li>
-      <li>Integrated Prometheus with AKS for metrics, alerting, pod health, and latency monitoring.</li>
-      <li>Implemented Azure Service Bus and Event Hubs for event-driven microservices and real-time streaming.</li>
-      <li>Automated patching and hardening for 120+ Linux VMs using Ansible and PowerShell.</li>
-      <li>Achieved STIG compliance and reduced audit findings for ISO 27001 and HIPAA reviews.</li>
-      <li>Led root cause analysis and postmortems for production incidents.</li>
+      <li>Designed and deployed scalable Azure infrastructure using Terraform and Bicep, provisioning AKS clusters, VM Scale Sets, VNETs, and Key Vault, reducing deployment time by 90%.</li>
+      <li>Automated end-to-end CI/CD pipelines with Azure DevOps, incorporating security scanning and gated approvals, cutting release cycles by 70%.</li>
+      <li>Managed Azure Kubernetes Service (AKS) for microservices supporting 200K+ daily users with 99.99% uptime.</li>
+      <li>Implemented Azure Service Bus and Event Hubs to build reliable, scalable event-driven architectures, enabling seamless microservices decoupling and real-time data streaming.</li>
+      <li>Integrated Prometheus with Azure Kubernetes Service (AKS) for advanced metrics collection and alerting, improving incident response time by 45%.</li>
+      <li>Implemented Policy-as-Code and Sentinel to enforce compliance, decreasing audit findings to zero for ISO 27001 and HIPAA reviews.</li>
+      <li>Automated patching and hardening of 120+ Linux VMs using Ansible and PowerShell, achieving 100% compliance with STIG security standards.</li>
+      <li>Led root cause analysis and postmortems for major incidents, which helped the team identify patterns and prevent similar outages in the future.</li>
+      <li>Designed and maintained Azure networking including VNET peering, NSGs, and private endpoints, ensuring secure multi-region connectivity.</li>
+      <li>Built serverless CI/CD pipelines using GitHub Actions and Azure Functions for event-driven automation across microservices.</li>
+      <li>Designed GitOps-based deployment strategy using ArgoCD and Helm for AKS, improving rollback capability and audit readiness.</li>
+      <li>Collaborated cross-functionally with security and compliance teams to implement FedRAMP and NIST controls within cloud environments.</li>
+      <li>Provisioned Apache Cassandra clusters on Azure VMs using Terraform and Ansible with replication, auto-healing, and Prometheus-based monitoring.</li>
+      <li>Built reliable backup and disaster recovery workflows for key applications, achieving recovery goals of under 15 minutes RPO and 1 hour RTO.</li>
     </ul>
   </div>
 
@@ -138,17 +200,11 @@
     <p class="job-company">Northwest Missouri State University</p>
   </div>
 
-  <h2>Key Projects</h2>
+  <h2>Certifications</h2>
   <ul>
-    <li><strong>AWS Infrastructure Automation:</strong> Terraform/CloudFormation for VPC, EC2, S3, IAM — automated repeatable provisioning.</li>
-    <li><strong>Kubernetes on Amazon EKS:</strong> Production EKS clusters with Helm, node scaling, and CloudWatch monitoring.</li>
-    <li><strong>Azure AKS Microservices:</strong> 200K+ users, 99.99% uptime, Prometheus/Grafana integration.</li>
-    <li><strong>CI/CD Pipeline Automation:</strong> Jenkins, Azure DevOps, GitHub Actions — 60%+ reduction in deployment lead time.</li>
-    <li><strong>Cloud Monitoring:</strong> CloudWatch, Azure Monitor, Prometheus, Grafana, ELK, Datadog dashboards and alerting.</li>
-    <li><strong>Security & Compliance:</strong> Automated 120+ Linux VMs, STIG/HIPAA/ISO 27001 compliance workflows.</li>
+    <li>Microsoft Certified: Azure Administrator Associate (2023)</li>
+    <li>AWS Certified Cloud Practitioner (CCP) (2025)</li>
+    <li>Microsoft Certified: Power BI Data Analyst Associate (2023)</li>
   </ul>
-
-  <h2>Continuous Learning</h2>
-  <p>AWS Cloud & DevOps, Azure Cloud Engineering, Terraform IaC, Kubernetes Administration, Security & Compliance Practices.</p>
 </body>
 </html>

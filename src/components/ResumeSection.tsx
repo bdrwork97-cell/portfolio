@@ -1,39 +1,80 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FileDown } from 'lucide-react';
-import { personalInfo } from '../data/portfolio';
-import { useInView } from '../hooks/useScroll';
+import { personalInfo, sectionContent } from '../data/portfolio';
+import TiltCard from './TiltCard';
+import { DownloadResumeMascot, ViewResumeLensMascot } from './ResumeMascot';
+import SectionReveal from './SectionReveal';
 
 export default function ResumeSection() {
-  const { ref, isInView } = useInView();
+  const [downloadActive, setDownloadActive] = useState(false);
+  const [viewActive, setViewActive] = useState(false);
+
+  const handleDownloadClick = () => {
+    setDownloadActive(true);
+    window.setTimeout(() => setDownloadActive(false), 900);
+  };
 
   return (
-    <section id="resume" className="relative bg-white py-24 sm:py-32">
-      <div className="absolute inset-0 mesh-gradient opacity-50" aria-hidden="true" />
+    <section id="resume" className="holo-section">
+      <div className="holo-section-overlay" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="glass-card mx-auto max-w-2xl p-10 text-center"
-        >
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-azure-500/20 to-azure-500/20">
-            <FileDown className="h-8 w-8 text-azure-600" aria-hidden="true" />
-          </div>
+        <SectionReveal>
+          <TiltCard className="gradient-border scanline mx-auto max-w-3xl overflow-hidden p-8 sm:p-10" tilt={9} depth={14}>
+            <div className="mb-10 text-center">
+              <motion.div
+                animate={{ scale: [1, 1.04, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="motion-card-icon mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-azure-200/60 bg-azure-50/80 shadow-neon-azure"
+              >
+                <FileDown className="h-7 w-7 text-azure-600" aria-hidden="true" />
+              </motion.div>
 
-          <h2 className="mb-3 text-2xl font-bold text-ms-text md:text-3xl">
-            Want the full resume?
-          </h2>
-          <p className="mb-8 text-ms-text-secondary">
-            View or save my complete resume with detailed experience, skills, and education. Use &ldquo;Save as PDF&rdquo; on the resume page to download.
-          </p>
+              <h2 className="mb-3 text-2xl font-bold text-ms-text md:text-3xl">
+                {sectionContent.resume.title}
+              </h2>
+              <p className="mx-auto max-w-xl text-ms-text-secondary">{sectionContent.resume.description}</p>
+            </div>
 
-          <a href={personalInfo.resumePath} target="_blank" rel="noopener noreferrer" className="btn-primary">
-            <FileDown className="h-4 w-4" aria-hidden="true" />
-            Download Resume
-          </a>
-        </motion.div>
+            <div className="flex items-end justify-center gap-10 sm:gap-16">
+              <motion.a
+                href={personalInfo.resumePath}
+                download={personalInfo.resumeDownloadName}
+                aria-label="Download resume PDF"
+                onClick={handleDownloadClick}
+                className="group flex flex-col items-center rounded-2xl p-3 transition-colors hover:bg-azure-50/80 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 focus:ring-offset-2 focus:ring-offset-holo-bg"
+                whileHover={{ scale: 1.05, y: -4, boxShadow: '0 0 24px rgba(80,230,255,0.15)' }}
+                whileTap={{ scale: 0.96 }}
+              >
+                <DownloadResumeMascot active={downloadActive} />
+              </motion.a>
+
+              <motion.div
+                className="hidden h-px w-10 self-center bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent sm:block"
+                animate={{ opacity: [0.3, 0.8, 0.3], scaleX: [0.8, 1, 0.8] }}
+                transition={{ duration: 2.5, repeat: Infinity }}
+                aria-hidden="true"
+              />
+
+              <motion.a
+                href={personalInfo.resumeHtmlPath}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View resume in browser"
+                onMouseEnter={() => setViewActive(true)}
+                onMouseLeave={() => setViewActive(false)}
+                onFocus={() => setViewActive(true)}
+                onBlur={() => setViewActive(false)}
+                className="group flex flex-col items-center rounded-2xl p-3 transition-colors hover:bg-azure-50/80 focus:outline-none focus:ring-2 focus:ring-cyan-400/40 focus:ring-offset-2 focus:ring-offset-holo-bg"
+                whileHover={{ scale: 1.05, y: -4, boxShadow: '0 0 24px rgba(80,230,255,0.15)' }}
+                whileTap={{ scale: 0.96 }}
+              >
+                <ViewResumeLensMascot active={viewActive} />
+              </motion.a>
+            </div>
+          </TiltCard>
+        </SectionReveal>
       </div>
     </section>
   );
