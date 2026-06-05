@@ -3,9 +3,11 @@ import { Briefcase, MapPin } from 'lucide-react';
 import { experiences, sectionContent } from '../data/portfolio';
 import { useInView } from '../hooks/useScroll';
 import { TimelineGapInfra } from './ExperienceCloudBackground';
+import { ExperienceSectionBackdrop } from './ExperienceGap3DDecor';
 import { ExperienceTenureMascot } from './ExperienceTenureMascot';
 import TiltCard from './TiltCard';
 import SectionHeader from './SectionHeader';
+import SectionBackgroundCartoons from './SectionBackgroundCartoons';
 
 export default function Experience() {
   const { ref, isInView } = useInView();
@@ -13,6 +15,8 @@ export default function Experience() {
   return (
     <section id="experience" className="holo-section">
       <div className="holo-section-overlay" aria-hidden="true" />
+      <SectionBackgroundCartoons theme="experience" />
+      <ExperienceSectionBackdrop />
 
       <div ref={ref} className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -109,10 +113,27 @@ export default function Experience() {
                   </div>
 
                   <div
-                    className="relative hidden min-h-[300px] overflow-hidden md:block md:w-1/2"
+                    className="relative hidden min-h-[400px] overflow-hidden md:block md:w-1/2"
                     aria-hidden="true"
                   >
-                    <TimelineGapInfra index={index} isEven={isEven} isInView={isInView} />
+                    <TimelineGapInfra
+                      index={index}
+                      isEven={isEven}
+                      isInView={isInView}
+                      company={exp.company}
+                      tenure={exp.tenure}
+                    />
+                  </div>
+
+                  <div className="relative mt-6 min-h-[240px] overflow-hidden md:hidden" aria-hidden="true">
+                    <TimelineGapInfra
+                      index={index}
+                      isEven={isEven}
+                      isInView={isInView}
+                      company={exp.company}
+                      tenure={exp.tenure}
+                      compact
+                    />
                   </div>
                 </motion.div>
               );

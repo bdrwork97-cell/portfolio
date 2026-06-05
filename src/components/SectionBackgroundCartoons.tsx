@@ -137,8 +137,9 @@ const themePlacements: Record<
     { mascot: 'owl', className: 'right-[8%] top-[12%] hidden xl:block opacity-[0.1]', delay: 0.8 },
   ],
   experience: [
-    { mascot: 'bulldog', className: 'left-[6%] top-[25%] hidden md:block opacity-[0.12]', delay: 0.2 },
-    { mascot: 'dog', className: 'right-[5%] bottom-[18%] hidden lg:block opacity-[0.13]', delay: 0.5 },
+    { mascot: 'bulldog', className: 'left-[6%] top-[25%] hidden md:block opacity-[0.2]', delay: 0.2 },
+    { mascot: 'dog', className: 'right-[5%] bottom-[18%] hidden lg:block opacity-[0.22]', delay: 0.5 },
+    { mascot: 'octopus', className: 'right-[8%] top-[12%] hidden xl:block opacity-[0.18]', delay: 0.9 },
   ],
   projects: [
     { mascot: 'beaver', className: 'left-[5%] top-[15%] hidden md:block opacity-[0.14]', delay: 0 },
